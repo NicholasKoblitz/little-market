@@ -1,4 +1,5 @@
-import {React, useState} from "react";
+import {React, useState, useContext} from "react";
+import ProductContext from "./ProductContex";
 
 const SearchBar = () => {
 
@@ -7,6 +8,7 @@ const SearchBar = () => {
     }
 
     const [searchData, setSearchData] = useState(INIT_VAL);
+    const products = useContext(ProductContext);
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -21,6 +23,12 @@ const SearchBar = () => {
     async function fetchCategory(category) {
         const res = await fetch(`https://fakestoreapi.com/products/category/${category}`)
         
+        if(res.ok) {
+            products = await res.json();
+        }
+        else {
+            throw new Error(`Error: Status Code ${res.status}`);
+        }
     }
     
 
@@ -28,13 +36,11 @@ const SearchBar = () => {
 
     return (
         <div className="SerachBar">
-            <input
-                type="text"
-                className="SearchBar-input"
-                placeholder="Search"
-                value={searchData.name}
-                onChange={handleChange}
-            />
+            {/* 
+            Add a form componenet
+            Add a Material UI Autocomplete component
+            Add a button component
+            */}
         </div>
     )
 }
