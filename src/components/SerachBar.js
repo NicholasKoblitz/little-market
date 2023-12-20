@@ -1,6 +1,4 @@
-import React from "react";
-import { useState } from "react";
-
+import {React, useState} from "react";
 
 const SearchBar = () => {
 
@@ -15,11 +13,16 @@ const SearchBar = () => {
         setSearchData(searchData => ({...searchData, [name]: value}));
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setSearchData(INIT_VAL);
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     setSearchData(INIT_VAL);
 
+    // }
+    async function fetchCategory(category) {
+        const res = await fetch(`https://fakestoreapi.com/products/category/${category}`)
+        
     }
+    
 
 
 
