@@ -13,6 +13,14 @@ function App() {
           <Header/>
           <Routes>
             <Route exact path="/" element={<Hompage/>} />
+            {/* 
+            /login
+            /sign-up -> Any new user will cause a 404 when trying to view their page. API constrant
+            /products/:category
+            /products/:productId
+            /users/:userId
+            /users/:userId/cart
+            */}
           </Routes>
         </ProductContext.Provider>
       </BrowserRouter>
