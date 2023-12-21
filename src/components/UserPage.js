@@ -9,7 +9,7 @@ const UserPage = () => {
     const {userId} = useParams();
 
     useEffect(() => {
-        async function fetchUser(useId) {
+        async function fetchUser(userId) {
             const res = await fetch(`https://fakestoreapi.com/users/${userId}`);
 
             if(res.ok) {
