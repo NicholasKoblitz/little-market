@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Header from './Header';
 import Hompage from './Homepage';
 import Login from './Login';
+import UserPage from './UserPage';
 import SearchProducts from './SearchedProducts';
 import ProductPage from './ProductPage';
 import ProductContext from './ProductContex';
@@ -17,11 +18,11 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Hompage/>} />
             <Route exact path='/login' element={<Login/>}/>
+            <Route exact path='/users/:userId' element={<UserPage/>}/>
             <Route exact path='/products/:category' element={<SearchProducts/>}/>
             <Route exact path='/products/:productId' element={<ProductPage/>}/>
             {/* 
             /sign-up -> Any new user will cause a 404 when trying to view their page. API constrant
-            /users/:userId
             /users/:userId/cart
             */}
           </Routes>
