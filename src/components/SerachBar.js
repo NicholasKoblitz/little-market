@@ -41,6 +41,15 @@ const SearchBar = () => {
             Add a Material UI Autocomplete component
             Add a button component
             */}
+            <form>
+            <input
+            type="text"
+            placeholder="Search"
+            value={searchData.name}
+            onChange={handleChange}
+            />
+            <button>Search</button>
+            </form>
         </div>
     )
 }
