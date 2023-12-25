@@ -46,7 +46,7 @@ const Login = () => {
         setFormData(formData => ({...formData, [name]: value}))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         await fetchToken(formData.username, formData.password);
         const id = await fetchUser(formData.username)

@@ -9,21 +9,21 @@ const SearchProducts = () => {
     const [products, setProducts] = useState();
     const {category} = useParams()
 
-    useEffect(() => {
-        async function fetchCategory(category) {
-            const res = await fetch(`https://fakestoreapi.com/products/category/${category}`)
+    // useEffect(() => {
+    //     async function fetchCategory(category) {
+    //         const res = await fetch(`https://fakestoreapi.com/products/category/${category}`)
             
-            if(res.ok) {
-                const data = await res.json();
-                setProducts(data)
-            }
-            else {
-                throw new Error(`Error: Status Code ${res.status}`);
-            }
-        }
+    //         if(res.ok) {
+    //             const data = await res.json();
+    //             setProducts(data)
+    //         }
+    //         else {
+    //             throw new Error(`Error: Status Code ${res.status}`);
+    //         }
+    //     }
 
-        fetchCategory(category);
-    }, [])
+    //     fetchCategory(category);
+    // }, [])
 
     return (
         <div className="SearchedProducts">

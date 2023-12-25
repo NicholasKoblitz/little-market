@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Header from './Header';
-import Hompage from './Homepage';
+import Header from './Header/Header';
+import Homepage from './Homepage';
 import Login from './Login';
 import UserPage from './UserPage';
 import Cart from './Cart';
@@ -17,7 +17,7 @@ function App() {
         <ProductContext.Provider value={{}}>
           <Header/>
           <Routes>
-            <Route exact path="/" element={<Hompage/>} />
+            <Route exact path="/" element={<Homepage/>} />
             <Route exact path='/login' element={<Login/>}/>
             <Route exact path='/users/:userId' element={<UserPage/>}/>
             <Route exact path='/users/:userId/cart' element={<Cart/>}/>

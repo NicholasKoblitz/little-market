@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from "react";
-import useParams from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
 const UserPage = () => {
@@ -8,20 +8,20 @@ const UserPage = () => {
     const [user, setUser] = useState();
     const {userId} = useParams();
 
-    useEffect(() => {
-        async function fetchUser(userId) {
-            const res = await fetch(`https://fakestoreapi.com/users/${userId}`);
+    // useEffect(() => {
+    //     async function fetchUser(userId) {
+    //         const res = await fetch(`https://fakestoreapi.com/users/${userId}`);
 
-            if(res.ok) {
-                const data = await res.json();
-                setUser(data);
-            }
-            else {
-                throw new Error(`Error: Status Code ${res.status}`)
-            }
-        }
-        fetchUser(userId);
-    }, [])
+    //         if(res.ok) {
+    //             const data = await res.json();
+    //             setUser(data);
+    //         }
+    //         else {
+    //             throw new Error(`Error: Status Code ${res.status}`)
+    //         }
+    //     }
+    //     fetchUser(userId);
+    // }, [])
 
     return (
         <div className="UserPage">
