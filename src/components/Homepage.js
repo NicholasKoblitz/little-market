@@ -1,6 +1,6 @@
 import {React, useEffect, useState} from "react";
 import ProductCard from "./ProductCard";
-import axios from "axios";
+import { getAllProduct } from "../api";
 
 
 const Homepage = () => {
@@ -8,11 +8,13 @@ const Homepage = () => {
 
     const [products, setProducts] = useState([]);
 
-    // useEffect(() => {
-    //     async function fetchProducts() {
-
-    //     fetchProducts();
-    // }, [])
+    useEffect(() => {
+        async function fetchProducts() {
+            const res = await getAllProduct();
+            setProducts(res)
+        }
+        fetchProducts();
+    }, [])
 
     
 
