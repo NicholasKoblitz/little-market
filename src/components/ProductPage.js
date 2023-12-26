@@ -1,5 +1,6 @@
 import {useEffect, useState, React} from "react";
 import { useParams } from "react-router-dom";
+import { getSingleProduct } from "../api";
 
 const ProductPage = () => {
 
@@ -9,15 +10,8 @@ const ProductPage = () => {
 
     useEffect(() => {
         async function fetchProduct(productId) {
-            const res = await fetch(`https://fakestoreapi.com/products/${productId}`);
-
-            if(res.ok) {
-                const data = await res.json();
-                setProduct(data)
-            }
-            else {
-                throw new Error(`Error: Status Code ${res.status}`)
-            }
+            const res = await getSingleProduct(productId)
+            setProduct(res)
         }
         fetchProduct(productId)
     }, [])

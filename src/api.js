@@ -48,7 +48,7 @@ export const getUserCart = async (userId) => {
 
     for(let c in res.data) {
         if(res.data[c].userId === userId){
-            return res.data[c]
+            return res.data[c].products
         }
     }
 }
