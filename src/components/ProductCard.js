@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const ProductCard = (key, title, price, category, description, image) => {
+const ProductCard = ({key, title, price, category, description, image}) => {
 
 
     return (
