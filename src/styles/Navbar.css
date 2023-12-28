@@ -1,0 +1,15 @@
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.Navbar-logo {
+    margin-left: 1rem;
+    border-radius: 50px;
+    border: 1px soild black; 
+}
+
+.Navbar-loginAndSignup {
+    
+}

@@ -16,8 +16,9 @@ export const getAllProduct = async () => {
 export const getProductsByCategory = async (category) => {
     const res = await axios({
         method: "get",
-        url:`${FAKEAPI}/category/${category}`
+        url:`${FAKEAPI}/products/category/${category}`
     })
+    console.log(res)
 
     return res.data;
 }

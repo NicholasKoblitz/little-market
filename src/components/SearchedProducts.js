@@ -7,13 +7,14 @@ import { getProductsByCategory } from "../api";
 const SearchProducts = () => {
 
 
-    const [products, setProducts] = useState();
+    const [products, setProducts] = useState([]);
     const {category} = useParams()
 
     useEffect(() => {
         async function fetchCategory(category) {
             const res = await getProductsByCategory(category)
             setProducts(res)
+            console.log(products)
         }
 
         fetchCategory(category);

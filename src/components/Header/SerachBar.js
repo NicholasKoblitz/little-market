@@ -1,5 +1,6 @@
 import {React, useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
+import '../../styles/SearchBar.css'
 
 const SearchBar = () => {
 
@@ -17,15 +18,15 @@ const SearchBar = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(searchData)
         navigate(`/products/${searchData.category}`);
+        setSearchData(INIT_VAL);
 
     }
     
 
     return (
-        <div className="SerachBar">
-            <form onSubmit={handleSubmit}>
+        <div className="SearchBar">
+            <form className="SearchBar-Form" onSubmit={handleSubmit}>
                 <input
                     type="text"
                     placeholder="Search"
@@ -33,7 +34,7 @@ const SearchBar = () => {
                     value={searchData.category}
                     onChange={handleChange}
                 />
-                <button>Search</button>
+                <button className="SearchBar-btn">Search</button>
             </form>
         </div>
     )
