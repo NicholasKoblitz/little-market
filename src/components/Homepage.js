@@ -1,6 +1,7 @@
 import {React, useEffect, useState} from "react";
 import ProductCard from "./ProductCard";
 import { getAllProduct } from "../api";
+import '../styles/Homepage.css'
 
 
 const Homepage = () => {

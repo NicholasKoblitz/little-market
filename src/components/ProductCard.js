@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/ProductCard.css'
 
 
 const ProductCard = ({key, title, price, category, description, image}) => {
@@ -8,7 +9,7 @@ const ProductCard = ({key, title, price, category, description, image}) => {
         <div className="ProductCard" id={key}>
             <div className="ProductCard-Body">
                 <div className="ProductCard-Image">
-                    <img href={image} alt={title}/>
+                    <img src={image} alt={title}/>
                 </div>
                 <div className="ProductCard-Info">
                     <div className="ProductCard-Title">
@@ -18,19 +19,19 @@ const ProductCard = ({key, title, price, category, description, image}) => {
                     </div>
                     <div className="ProductCard-Price">
                         <span>
-                            {price}
+                            {`$${price}`}
                         </span>
                     </div>
-                    <div className="ProductCard-Category">
+                    {/* <div className="ProductCard-Category">
                         <span>
                             {category}
                         </span>
-                    </div>
-                    <div className="ProductCard-Description">
+                    </div> */}
+                    {/* <div className="ProductCard-Description">
                         <p>
                             {description}
                         </p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
